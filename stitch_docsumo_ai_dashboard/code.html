@@ -1,0 +1,241 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed":"#00201c","on-tertiary-container":"#00367a","surface-container-low":"#131b2e","secondary":"#4fdbc8","on-tertiary-fixed":"#001a42","surface-variant":"#2d3449","on-surface-variant":"#bbcabf","surface-tint":"#4edea3","secondary-container":"#04b4a2","on-tertiary":"#002e6a","inverse-on-surface":"#283044","tertiary-fixed":"#d8e2ff","surface-bright":"#31394d","inverse-surface":"#dae2fd","primary-container":"#10b981","outline":"#86948a","secondary-fixed-dim":"#4fdbc8","on-primary":"#003824","on-background":"#dae2fd","primary-fixed":"#6ffbbe","error":"#ffb4ab","surface-container-highest":"#2d3449","on-primary-container":"#00422b","error-container":"#93000a","tertiary-fixed-dim":"#adc6ff","on-secondary-container":"#003f38","primary":"#4edea3","surface-dim":"#0b1326","secondary-fixed":"#71f8e4","on-primary-fixed":"#002113","on-primary-fixed-variant":"#005236","surface":"#0b1326","inverse-primary":"#006c49","on-error-container":"#ffdad6","on-secondary":"#003731","on-tertiary-fixed-variant":"#004395","surface-container-high":"#222a3d","surface-container-lowest":"#060e20","on-surface":"#dae2fd","on-secondary-fixed-variant":"#005048","background":"#0b1326","on-error":"#690005","primary-fixed-dim":"#4edea3","tertiary":"#adc6ff","tertiary-container":"#71a1ff","outline-variant":"#3c4a42","surface-container":"#171f33"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"unit":"4px","margin-desktop":"48px","gutter":"24px","container-max":"1280px","margin-mobile":"16px"},"fontFamily":{"body-sm":["Geist"],"code-mono":["Geist Mono"],"display-lg-mobile":["Geist"],"label-caps":["Geist"],"headline-md":["Geist"],"display-lg":["Geist"],"body-base":["Geist"]},"fontSize":{"body-sm":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"code-mono":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-lg-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-caps":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.04em","fontWeight":"700"}],"body-base":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}]}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-background font-body-base text-on-background"><header class="fixed top-0 w-full z-50 bg-surface-container/70 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] ring-1 ring-white/5"><div class="h-16 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-4"><img alt="DocSumo AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9c1qb9Shl0dNykYk4gBDC_PBqh2mQQ2gkAgt3Sny9CVPpiORh5K8yhQp5COt0FZ4Ip0FSu3sROF-FOMIhkvzcH2ovBV7lePACepcrFAcTh52yuZ9zv8f7gIykK2h6ZX06LqaX5TGwZE7sIolpnOzq7GvQuFUdKy2kV-5m7IWDMCNtmPppDk8cVriUae4e7fkoaV4vSAdAuav-9q-11E-RkgbwUW2WwfJcS61VIPAhDFseKCEaWk6ydO4i1R2gCPc8ld9hNZssyaQa"/><span class="font-headline-md text-headline-md text-on-surface">DocSumo AI</span></div><nav class="flex items-center gap-8" data-active-classes="text-primary font-bold"><a class="text-body-sm font-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="library" href="#">Library</a><a class="text-body-sm font-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="recent-summaries" href="#">Recent Summaries</a><a aria-current="page" class="transition-colors text-primary font-bold" data-path="workspaces" href="#">Workspaces</a></nav><div class="flex items-center gap-6"><div class="flex items-center gap-2 bg-primary-container/10 px-3 py-1.5 rounded-full border border-primary-container/20"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="text-label-caps font-label-caps text-primary">Groq Llama 3 Engine Active</span></div><div class="flex items-center gap-3 border-l border-outline-variant pl-6"><button class="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined">settings</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkKOZ09u9K2uQAS6E2F1RKUvqpYQQW5bMtTmZEMYz9U97DzjA6FtyF6xKFJcJIgHq-MfCH8_AqwGbk1pBgx3OlO99AucUhEgFkBbV5XtjiwLUsEjQCJP_MHAxA3wrhNvL47VBwRtxZafFub5hmr9c3kY0ZzrJ7EWMT5HkoC7R8EVBh7AtmryQ335_nzKd5HiG6JbHEDCxuXR3AiDwx3Y7tUPmwJvTFcZTCpAIl_DuFD2irtX1qtuKcWeYIRSdhr61WmXSaDYtYyYq0"/></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Workspace Container -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter px-margin-desktop py-8 relative">
+<!-- Decorative Ambient Background Elements -->
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+<div class="absolute bottom-0 right-1/4 w-64 h-64 bg-secondary/10 blur-[100px] rounded-full pointer-events-none -z-10"></div>
+<!-- LEFT COLUMN: Upload & Controls (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="bg-surface-container/40 backdrop-blur-xl ring-1 ring-white/10 shadow-2xl rounded-xl p-8 sticky top-24">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">upload_file</span>
+</div>
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Input Core</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Configure your analysis parameters</p>
+</div>
+</div>
+<!-- Drag & Drop Zone -->
+<div class="group relative cursor-pointer mb-8" id="drop-zone">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+<div class="relative flex flex-col items-center justify-center gap-4 py-12 px-6 bg-surface-container-lowest/50 border-2 border-dashed border-outline-variant hover:border-primary transition-all rounded-xl">
+<div class="w-16 h-16 rounded-full bg-surface-variant/50 flex items-center justify-center transition-transform group-hover:scale-110 duration-300">
+<span class="material-symbols-outlined text-primary text-4xl">cloud_upload</span>
+</div>
+<div class="text-center">
+<p class="text-body-base font-body-base text-on-surface font-semibold">Drop document here</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">Supports PDF, DOCX, TXT (Max 50MB)</p>
+</div>
+<input class="absolute inset-0 opacity-0 cursor-pointer" id="file-input" type="file"/>
+</div>
+</div>
+<!-- Control Stack -->
+<div class="space-y-6">
+<div class="flex flex-col gap-2">
+<label class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest ml-1">Summary Format</label>
+<div class="relative">
+<select class="w-full bg-surface-container-high/50 border border-outline-variant rounded-lg px-4 py-3 appearance-none text-on-surface focus:ring-2 focus:ring-primary/40 outline-none transition-all">
+<option>Executive Bullet Points</option>
+<option>1-Paragraph Overview</option>
+<option>Detailed Chapter Breakdown</option>
+<option>Key Action Items</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest ml-1">Focus Area</label>
+<div class="relative">
+<select class="w-full bg-surface-container-high/50 border border-outline-variant rounded-lg px-4 py-3 appearance-none text-on-surface focus:ring-2 focus:ring-primary/40 outline-none transition-all">
+<option>General Summary</option>
+<option>Financial Metrics</option>
+<option>Legal & Risks</option>
+<option>Technical Details</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">target</span>
+</div>
+</div>
+<!-- Analyze Button -->
+<button class="group relative w-full overflow-hidden rounded-lg bg-primary py-4 px-6 font-bold text-on-primary transition-all hover:shadow-[0_0_20px_rgba(78,222,163,0.4)] active:scale-95" id="analyze-btn">
+<div class="relative z-10 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined animate-pulse" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-body-base font-body-base font-bold uppercase tracking-tight">Analyze & Summarize</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_100%] animate-[shimmer_2s_infinite] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+</button>
+</div>
+</div>
+<!-- Quick Stats Card -->
+<div class="bg-surface-container-low/30 ring-1 ring-white/5 rounded-xl p-6 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full ring-2 ring-background object-cover" data-alt="Portrait of a young executive using high-tech software" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6ajlf5xUoc4i5FRr3ftin1CwR_VRFgzJ5ZBdgCLP4aN95QKft272gV_zvG32lJgHQjJEZP7UDemR6xSjhZsL8fuOmgsO9YyI7RtwMehAj-WJIsC81cMV8sgN1jnp2OybG-S5COWGOvtTCBL-A--fF7PJW0BEHklMTE5rSdjQPbpb59K9qAN6i5-9844NaDggpvOGYQ1H5TpFaBF2-j8197IqBmglGhA-3LeaZY9huuC4VLmkLiPFNXORCM7V9imAgdOFiZUSsbwXa"/>
+<img class="w-8 h-8 rounded-full ring-2 ring-background object-cover" data-alt="Portrait of a data scientist in a dark room with green screen glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-ZnyoL6Vt37DejBe-lNctSMB1BXwHoDZGo2r54jw5lIUxlZ_Tbo4Ezu9IGMtoMLForV2WlG8Me7UuixPp1JEMukErj5QDpuE4nFFlwsztk8VIzfzLilS9ymf1waSiLBhtlUZfIqQypaHBNOjD7ULXr-xcyrtE5g9uk9Apy8KK_BLcZEb1gpXYI3xYAPs3VdCGRAo4WW2UnFcIA54n80XxHQ4unFxLKDhJ7cqmX_-XZcMr1_guQbMrS5hNRNci-gtWPr52bcVfTHS1"/>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-[10px] font-bold ring-2 ring-background text-on-surface">+12</div>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Active in this workspace</p>
+</div>
+<div class="text-right">
+<p class="text-label-caps font-label-caps text-primary">Groq Engine v3.1</p>
+<p class="text-[10px] text-on-surface-variant opacity-50 uppercase tracking-tighter">Latency: 14ms</p>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Output (7 Cols) -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container/40 backdrop-blur-xl ring-1 ring-white/10 shadow-2xl rounded-xl min-h-[700px] flex flex-col overflow-hidden">
+<!-- Header -->
+<div class="px-8 py-6 border-b border-outline-variant/30 flex items-center justify-between bg-surface-container-high/20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">insights</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Document Insights</h3>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded bg-surface-variant/50 text-on-surface-variant hover:text-on-surface transition-colors text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+              Copy
+            </button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded bg-surface-variant/50 text-on-surface-variant hover:text-on-surface transition-colors text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-sm">download</span>
+              Export
+            </button>
+</div>
+</div>
+<!-- Content Area -->
+<div class="flex-grow flex flex-col items-center justify-center p-12 text-center relative overflow-hidden" id="output-container">
+<!-- Empty State -->
+<div class="max-w-md space-y-6 animate-in fade-in duration-700" id="empty-state">
+<div class="relative w-32 h-32 mx-auto">
+<div class="absolute inset-0 bg-primary/20 blur-2xl rounded-full animate-pulse"></div>
+<div class="relative w-full h-full flex items-center justify-center text-primary/40">
+<span class="material-symbols-outlined text-7xl" style="font-variation-settings: 'wght' 200;">description</span>
+</div>
+</div>
+<div>
+<p class="text-headline-md font-headline-md text-on-surface mb-2">Ready for Extraction</p>
+<p class="text-body-base font-body-base text-on-surface-variant leading-relaxed">
+                Upload a document and select your summary options on the left to extract key insights instantly using Groq's high-speed AI engine.
+              </p>
+</div>
+<div class="grid grid-cols-3 gap-4 pt-8">
+<div class="h-1 bg-surface-variant rounded-full"></div>
+<div class="h-1 bg-surface-variant rounded-full"></div>
+<div class="h-1 bg-surface-variant rounded-full"></div>
+</div>
+</div>
+<!-- Loading State (Hidden by default) -->
+<div class="hidden flex flex-col items-center gap-8" id="loading-state">
+<div class="relative w-24 h-24">
+<svg class="w-full h-full animate-spin text-primary" viewbox="0 0 100 100">
+<circle class="opacity-10" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-width="8"></circle>
+<circle class="opacity-100" cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-dasharray="180" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary animate-pulse">bolt</span>
+</div>
+</div>
+<div class="space-y-2">
+<h4 class="text-headline-md font-headline-md text-on-surface">Distilling Intelligence...</h4>
+<div class="flex items-center gap-2 justify-center">
+<div class="w-2 h-2 rounded-full bg-primary animate-bounce"></div>
+<div class="w-2 h-2 rounded-full bg-primary animate-bounce [animation-delay:0.2s]"></div>
+<div class="w-2 h-2 rounded-full bg-primary animate-bounce [animation-delay:0.4s]"></div>
+</div>
+</div>
+</div>
+<!-- Markdown Output (Hidden by default) -->
+<div class="hidden w-full text-left space-y-8 h-full overflow-y-auto pr-4 scrollbar-thin" id="markdown-output">
+<div class="border-l-4 border-primary pl-6 py-2">
+<h1 class="text-display-lg font-display-lg text-on-surface mb-2">Quarterly Risk Analysis Report</h1>
+<p class="text-body-sm font-body-sm text-primary font-bold uppercase tracking-widest">Summary ID: AI-2948-X</p>
+</div>
+<div class="space-y-4">
+<h2 class="text-headline-md font-headline-md text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                    Key Takeaways
+                </h2>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<p class="text-body-base font-body-base text-on-surface-variant">The current liquidity ratio suggests a 15% increase in operational buffer compared to Q3.</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<p class="text-body-base font-body-base text-on-surface-variant">Regional regulatory changes in EU markets may require immediate compliance auditing.</p>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<p class="text-body-base font-body-base text-on-surface-variant">Project 'Zenith' shows potential cost-savings of up to $2.4M if implemented by March.</p>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container-highest/30 p-6 rounded-lg border border-white/5 italic">
+<p class="text-body-base font-body-base text-on-surface-variant">
+                    "This document primary focuses on the intersection of macro-economic stability and internal capital allocation strategies. The synthesized view suggests a shift towards conservative growth."
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<style>
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(187, 202, 191, 0.2);
+    border-radius: 10px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(187, 202, 191, 0.4);
+  }
+</style>
+<script>
+  const analyzeBtn = document.getElementById('analyze-btn');
+  const emptyState = document.getElementById('empty-state');
+  const loadingState = document.getElementById('loading-state');
+  const markdownOutput = document.getElementById('markdown-output');
+  const fileInput = document.getElementById('file-input');
+  const dropZone = document.getElementById('drop-zone');
+
+  analyzeBtn.addEventListener('click', () => {
+    // Basic simulation of the flow
+    emptyState.classList.add('hidden');
+    loadingState.classList.remove('hidden');
+    markdownOutput.classList.add('hidden');
+
+    setTimeout(() => {
+      loadingState.classList.add('hidden');
+      markdownOutput.classList.remove('hidden');
+      markdownOutput.classList.add('animate-in', 'slide-in-from-bottom-8', 'fade-in', 'duration-1000');
+    }, 2500);
+  });
+
+  // Simple drag & drop visual response
+  ['dragenter', 'dragover'].forEach(eventName => {
+    dropZone.addEventListener(eventName, e => {
+      e.preventDefault();
+      dropZone.querySelector('.relative.flex').classList.add('border-primary', 'bg-primary/5');
+    });
+  });
+
+  ['dragleave', 'drop'].forEach(eventName => {
+    dropZone.addEventListener(eventName, e => {
+      e.preventDefault();
+      dropZone.querySelector('.relative.flex').classList.remove('border-primary', 'bg-primary/5');
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-lowest py-8 ring-1 ring-white/5"><div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center"><div class="text-body-sm font-body-sm text-on-surface-variant">© 2024 DocSumo AI. Powered by Groq.</div><div class="flex gap-6"><a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">API Docs</a><a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a></div></div></footer></body></html>
