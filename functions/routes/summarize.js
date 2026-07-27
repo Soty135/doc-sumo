@@ -1,5 +1,5 @@
 const express = require('express');
-const pdfParse = require('pdf-parse');
+const pdfjsLib = require('pdfjs-dist/legacy/build/pdf');
 const { uploadSingle } = require('../middleware/upload');
 const { generateSummary } = require('../services/groq');
 const { saveSummary, getRecentSummaries } = require('../services/firestore');
@@ -16,8 +16,13 @@ router.post('/api/summarize', uploadSingle, async (req, res) => {
     let text;
 
     if (req.file.mimetype === 'application/pdf') {
-      const data = await pdfParse(req.file.buffer);
-      text = data.text;
+      const pdf = await pdfjsLib.getDocument({ data: req.file.buffer }).promise;
+      let text = '';
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const content = await page.getTextContent();
+        text += content.items.map(item => item.str).join(' ') + '\n';
+      }
     } else {
       text = req.file.buffer.toString('utf-8');
     }
