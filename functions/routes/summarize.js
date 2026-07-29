@@ -16,7 +16,7 @@ router.post('/api/summarize', uploadSingle, async (req, res) => {
     let text;
 
     if (req.file.mimetype === 'application/pdf') {
-      const pdf = await pdfjsLib.getDocument({ data: req.file.buffer }).promise;
+      const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(req.file.buffer) }).promise;
       let text = '';
       for (let i = 1; i <= pdf.numPages; i++) {
         const page = await pdf.getPage(i);
