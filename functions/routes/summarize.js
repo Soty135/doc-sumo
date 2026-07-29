@@ -1,14 +1,23 @@
 const express = require('express');
-const pdfjsLib = require('pdfjs-dist/legacy/build/pdf');
-const { Worker } = require('worker_threads');
+const pdfParse = require('pdf-parse');
 const { uploadSingle } = require('../middleware/upload');
 const { generateSummary } = require('../services/groq');
 const { saveSummary, getRecentSummaries } = require('../services/firestore');
 
 const router = express.Router();
 
+function extractTextFromPdfRaw(buffer) {
+  const content = buffer.toString('binary');
+  const matches = [];
+  const regex = /\(((?:[^\\)]|\\.)*)\)/g;
+  let match;
+  while ((match = regex.exec(content)) !== null) {
+    if (match[1].length > 2) matches.push(match[1]);
+  }
+  return matches.join(' ');
+}
+
 router.post('/api/summarize', uploadSingle, async (req, res) => {
-  let pdfjsWorker;
   try {
     if (!req.file) {
       return res.status(400).json({ error: 'No file uploaded. Please provide a PDF or TXT file.' });
@@ -18,15 +27,12 @@ router.post('/api/summarize', uploadSingle, async (req, res) => {
     let text;
 
     if (req.file.mimetype === 'application/pdf') {
-      pdfjsWorker = new Worker(require.resolve('pdfjs-dist/legacy/build/pdf.worker.js'));
-      pdfjsLib.GlobalWorkerOptions.workerPort = pdfjsWorker;
-
-      const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(req.file.buffer) }).promise;
-      let text = '';
-      for (let i = 1; i <= pdf.numPages; i++) {
-        const page = await pdf.getPage(i);
-        const content = await page.getTextContent();
-        text += content.items.map(item => item.str).join(' ') + '\n';
+      try {
+        const data = await pdfParse(req.file.buffer);
+        text = data.text;
+      } catch (pdfErr) {
+        console.warn('pdf-parse failed, trying raw extraction:', pdfErr.message);
+        text = extractTextFromPdfRaw(req.file.buffer);
       }
     } else {
       text = req.file.buffer.toString('utf-8');
@@ -48,8 +54,6 @@ router.post('/api/summarize', uploadSingle, async (req, res) => {
   } catch (err) {
     console.error('Summarize error:', err);
     res.status(500).json({ error: 'Failed to process document. ' + err.message });
-  } finally {
-    if (pdfjsWorker) pdfjsWorker.terminate();
   }
 });
 
