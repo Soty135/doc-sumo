@@ -18,18 +18,12 @@ export default function Header({ onOpenDrawer }) {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <a className="text-sm font-body text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">
-            Library
-          </a>
           <button
             onClick={onOpenDrawer}
             className="text-sm font-body text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
           >
             Recent Summaries
           </button>
-          <a className="text-sm font-body text-primary font-bold cursor-pointer">
-            Workspaces
-          </a>
         </nav>
 
         {/* Right Section */}
@@ -42,9 +36,6 @@ export default function Header({ onOpenDrawer }) {
             </span>
           </div>
           <div className="hidden md:flex items-center gap-3 border-l border-outline-variant pl-6">
-            <button className="p-1.5 text-on-surface-variant hover:text-on-surface transition-colors">
-              <span className="material-symbols-outlined">settings</span>
-            </button>
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/40 to-secondary/40 flex items-center justify-center text-xs font-bold text-on-surface ring-2 ring-background">
               U
             </div>
@@ -71,9 +62,6 @@ export default function Header({ onOpenDrawer }) {
       {/* Mobile Nav Dropdown */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-outline-variant/30 bg-surface-container/95 backdrop-blur-xl px-4 py-4 space-y-3">
-          <a className="block text-sm font-body text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer py-2">
-            Library
-          </a>
           <button
             onClick={() => {
               setMobileMenuOpen(false);
@@ -83,9 +71,6 @@ export default function Header({ onOpenDrawer }) {
           >
             Recent Summaries
           </button>
-          <a className="block text-sm font-body text-primary font-bold cursor-pointer py-2">
-            Workspaces
-          </a>
           <div className="flex items-center gap-2 pt-2 border-t border-outline-variant/20">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
             <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-primary">

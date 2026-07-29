@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { summarizeDocument, fetchRecentSummaries } from '../utils/api';
 import toast from 'react-hot-toast';
 
@@ -34,7 +34,7 @@ export function useSummarize() {
     }
   };
 
-  const loadRecentSummaries = async () => {
+  const loadRecentSummaries = useCallback(async () => {
     setLoadingHistory(true);
     try {
       const data = await fetchRecentSummaries();
@@ -44,7 +44,7 @@ export function useSummarize() {
     } finally {
       setLoadingHistory(false);
     }
-  };
+  }, []);
 
   const loadSummaryFromHistory = (summary) => {
     setSummaryText(summary.summaryText);
