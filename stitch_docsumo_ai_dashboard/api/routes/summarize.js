@@ -1,6 +1,6 @@
 const express = require('express');
 const pdfjsLib = require('pdfjs-dist/legacy/build/pdf');
-pdfjsLib.GlobalWorkerOptions.workerSrc = require.resolve('pdfjs-dist/legacy/build/pdf.worker.js');
+const { Worker } = require('worker_threads');
 const { uploadSingle } = require('../middleware/upload');
 const { generateSummary } = require('../services/groq');
 const { saveSummary, getRecentSummaries } = require('../services/firestore');
@@ -8,6 +8,7 @@ const { saveSummary, getRecentSummaries } = require('../services/firestore');
 const router = express.Router();
 
 router.post('/api/summarize', uploadSingle, async (req, res) => {
+  let pdfjsWorker;
   try {
     if (!req.file) {
       return res.status(400).json({ error: 'No file uploaded. Please provide a PDF or TXT file.' });
@@ -17,6 +18,9 @@ router.post('/api/summarize', uploadSingle, async (req, res) => {
     let text;
 
     if (req.file.mimetype === 'application/pdf') {
+      pdfjsWorker = new Worker(require.resolve('pdfjs-dist/legacy/build/pdf.worker.js'));
+      pdfjsLib.GlobalWorkerOptions.workerPort = pdfjsWorker;
+
       const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(req.file.buffer) }).promise;
       let text = '';
       for (let i = 1; i <= pdf.numPages; i++) {
@@ -44,6 +48,8 @@ router.post('/api/summarize', uploadSingle, async (req, res) => {
   } catch (err) {
     console.error('Summarize error:', err);
     res.status(500).json({ error: 'Failed to process document. ' + err.message });
+  } finally {
+    if (pdfjsWorker) pdfjsWorker.terminate();
   }
 });
 
