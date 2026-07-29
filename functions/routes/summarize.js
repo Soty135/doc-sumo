@@ -1,5 +1,6 @@
 const express = require('express');
 const pdfjsLib = require('pdfjs-dist/legacy/build/pdf');
+pdfjsLib.GlobalWorkerOptions.workerSrc = require.resolve('pdfjs-dist/legacy/build/pdf.worker.js');
 const { uploadSingle } = require('../middleware/upload');
 const { generateSummary } = require('../services/groq');
 const { saveSummary, getRecentSummaries } = require('../services/firestore');
